@@ -67,15 +67,16 @@ def method_1(num)
     end
     return acc
 end
-puts method_1(10)
 
 def method_2(num)
-    acc = 0
-    for i in..num
-        if summ_number(i,num) % 3 ==0
-            acc +=1
+    sum = 0
+    for i in 1..num
+        if summ_number(i) % 3 == 0
+            puts (i)
+            sum += i
         end
     end
+    return sum
 end
 
 def method_3(num)
@@ -83,10 +84,12 @@ def method_3(num)
 end
 
 num = gets.chomp.to_i
+puts method_1(num)
+num = gets.chomp.to_i
+puts method_2(num)
+ num = gets.chomp.to_i
 puts minimum(num)
 num = gets.chomp.to_i
 puts maximum(num)
 num = gets.chomp.to_i
 puts composition(num)
-
-
