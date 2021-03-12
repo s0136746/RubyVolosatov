@@ -42,10 +42,17 @@ def maximum(num)
     return max
 end
 
+def prost1(n)
+    d = 2 
+    while n % d != 0 do
+        d += 1 
+    end
+    return d == n
+end
+
 def prost?(n1,n2)
     if n1 > n2
-        n1 = n2
-        n2 = n1 
+       n1,n2 = n2,n1
     end
     for i in 2..n2 do
         if n1 % i == 0 && n2 % i == 0
@@ -54,7 +61,6 @@ def prost?(n1,n2)
     end
     return true
 end
-
 
 
 
@@ -79,10 +85,27 @@ def method_2(num)
     return sum
 end
 
-def method_3(num)
 
+def method_3(num)
+    num1 = num
+    kol = 0
+    while num > 0 
+        kol += 1 
+        num /= 10
+    end
+
+    for i in 2..num1
+        if num1 % i == 0
+            if prost1(i) && prost1(kol)
+                print "#{i} "
+            end
+        end
+    end
+    return 
 end
 
+num = gets.chomp.to_i
+puts method_3(num)
 num = gets.chomp.to_i
 puts method_1(num)
 num = gets.chomp.to_i
