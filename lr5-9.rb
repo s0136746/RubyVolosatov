@@ -103,3 +103,40 @@ def method_3(num)
     end
     return 
 end
+
+def select_of_methods(method,num)
+    case method
+    when 'summa'
+        return "Сумма ваших цифр числа = " + summ_number(num).to_s
+    when 'composition'
+        return "Произведение ваших цифр числа =  " + composition(num).to_s
+    when 'minimum'
+        return "Минимальная цифра вашего числа = " + minimum(num).to_s
+    when 'maximum'
+        return "Максимальная цифра вашего числа = " + maximum(num).to_s
+    when 'method1'
+        return "Количество чисел взаимно простых с вашим = " + method_1(num).to_s
+    when 'method2'
+        return "Сумма цифр вашего числа, делящиеся на 3 = " + method_2(num).to_s
+    when 'method3'
+        return "Делитель вашего числа, взаимно простой с количеством цифр = " + method_3(num).to_s
+    else
+            "Такого метода не существует, введите help для вывода доступных методов "
+        return "
+        summa - сумма цифр вашего числа
+        composition - произведение цифр вашего числа
+        minimum - минимальная цифра вашего числа
+        maximum - максимальная цифра вашего числа
+        method1 - количество чисел взаимно простых с вашим
+        method2 - сумма цифр вашего числа, делящихся на 3
+        method3 - делитель вашего числа, взаимно простой с количеством цифр
+        "
+    end
+end
+
+print 'Введите метод: '
+method = gets.chomp
+print 'Введите число: '
+num = gets.chomp.to_i
+
+puts select_of_methods(method, num)
