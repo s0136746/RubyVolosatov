@@ -52,7 +52,8 @@ end
 
 def prost?(n1,n2)
     if n1 > n2
-       n1,n2 = n2,n1
+        n1 = n2
+        n2 = n1 
     end
     for i in 2..n2 do
         if n1 % i == 0 && n2 % i == 0
@@ -62,12 +63,10 @@ def prost?(n1,n2)
     return true
 end
 
-
-
 def method_1(num)
     acc = 0
-    for i in 1...num
-        if prost?(i,num)
+    for i in 2..num
+        if prost1(i) && prost1(num)
             acc += 1
         end
     end
@@ -76,10 +75,11 @@ end
 
 def method_2(num)
     sum = 0
-    for i in 1..num
-        if summ_number(i) % 3 == 0
-            puts (i)
-            sum += i
+    while(num > 0)
+        a = num % 10
+        if a % 3 == 0 
+            num /= 10
+            sum += a
         end
     end
     return sum
@@ -103,16 +103,3 @@ def method_3(num)
     end
     return 
 end
-
-num = gets.chomp.to_i
-puts method_3(num)
-num = gets.chomp.to_i
-puts method_1(num)
-num = gets.chomp.to_i
-puts method_2(num)
- num = gets.chomp.to_i
-puts minimum(num)
-num = gets.chomp.to_i
-puts maximum(num)
-num = gets.chomp.to_i
-puts composition(num)
