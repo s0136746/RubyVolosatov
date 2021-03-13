@@ -50,18 +50,6 @@ def prost1(n)
     return d == n
 end
 
-def prost?(n1,n2)
-    if n1 > n2
-        n1 = n2
-        n2 = n1 
-    end
-    for i in 2..n2 do
-        if n1 % i == 0 && n2 % i == 0
-            return false
-        end
-    end
-    return true
-end
 
 def method_1(num)
     acc = 0
@@ -120,23 +108,27 @@ def select_of_methods(method,num)
         return "Сумма цифр вашего числа, делящиеся на 3 = " + method_2(num).to_s
     when 'method3'
         return "Делитель вашего числа, взаимно простой с количеством цифр = " + method_3(num).to_s
+    when "help"
+        help()
     else
-            "Такого метода не существует, введите help для вывода доступных методов "
-        return "
-        summa - сумма цифр вашего числа
-        composition - произведение цифр вашего числа
-        minimum - минимальная цифра вашего числа
-        maximum - максимальная цифра вашего числа
-        method1 - количество чисел взаимно простых с вашим
-        method2 - сумма цифр вашего числа, делящихся на 3
-        method3 - делитель вашего числа, взаимно простой с количеством цифр
-        "
+        puts "Такой функции нет"
     end
 end
 
+def help()
+    puts" Список доступных методов.
+    1. summa - сумма цифр числа.
+    2. composition - произведение цифр числа.
+    3. minimum - минимальная цифра числа.
+    4. maximum - максимальная цифра числа.
+    5. method1 - количество чисел взаимно простых с введенным.
+    6. method2 - сумма цифр вашего числа, делящихся на 3.
+    7. method3 - делитель числа, взаимно простой с количеством цифр.
+    "
+end
 print 'Введите метод: '
 method = gets.chomp
 print 'Введите число: '
 num = gets.chomp.to_i
 
-puts select_of_methods(method, num)
+puts select_of_methods(method,num)
