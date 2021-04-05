@@ -1,3 +1,0 @@
-"# RubyVolosatov" 
-"# RubyVolosatov" 
-"# RubyVolosatov" 
