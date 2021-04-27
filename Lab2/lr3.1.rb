@@ -7,7 +7,7 @@ def vvod(element)
         el = STDIN.gets.chomp
         myarray.unshift(el)
     end
-
+    
     return myarray
 end
 

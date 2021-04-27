@@ -4,4 +4,4 @@ def printfile
     return information.split
 end
 
-print printfile
+print printfile  
