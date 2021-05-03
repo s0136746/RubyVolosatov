@@ -53,13 +53,32 @@ end
 
 
 
-def method50
-    
+def method50(l1,l2)
+    mas = []
+    for i in l1
+        prov = true
+        for j in l2
+            if i == j
+                prov = false
+            end
+        end
+        if prov
+            mas.push(i)
+        end
+    end
+    for j in l2
+        prov = true
+        for i in l1
+            if i == j
+                prov = false
+            end
+        end
+        if prov
+            mas.push(j)
+        end
+    end
+    print mas
 end
-
-print ("Введите элементы списка: ")
-arr = gets.chomp.split
-arr = arr.map(&:to_i)
 
 mystring = ''
 
@@ -73,13 +92,15 @@ while mystring != '0'
 	mystring = gets.chomp()
 	case mystring
 	when '2'
-		puts "Список: "
-        print arr
+        print ("Введите элементы списка: ")
+        arr = gets.chomp.split
+        arr = arr.map(&:to_i)
 		puts "Решение: "
         puts method2(arr)
 	when '14'
-		puts "Список: "
-        print arr
+        print ("Введите элементы списка: ")
+        arr = gets.chomp.split
+        arr = arr.map(&:to_i)
         puts '/nНеобходимо ввести интервал'
 		print 'a = '
 		a = gets.to_i
@@ -88,13 +109,15 @@ while mystring != '0'
 		puts "/nРешение: "
         puts method14(arr, a, b)
 	when '26'
-		puts "Список: "
-        print arr
+        print ("Введите элементы списка: ")
+        arr = gets.chomp.split
+        arr = arr.map(&:to_i)        
 		puts "Решение: "
         puts method26(arr)
 	when '38'
-		puts "Список: "
-        print arr
+        print ("Введите элементы списка: ")
+        arr = gets.chomp.split
+        arr = arr.map(&:to_i)        
         puts 'Необходимо ввести интервал'
 		print 'a = '
 		a = gets.to_i
@@ -102,7 +125,13 @@ while mystring != '0'
 		b = gets.to_i
 		puts method38(arr, a, b)
 	when '50'
-		
+        print ("Введите элементы первого списка: ")
+        l1 = gets.chomp.split
+        l1 = l1.map(&:to_i)
+        print ("Введите элементы второго списка: ")
+        l2 = gets.chomp.split
+        l2 = l2.map(&:to_i)
+        puts method50(l1,l2)
 	when '0'
         puts "Выход"
 		puts 'Exit'
