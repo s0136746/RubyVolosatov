@@ -13,7 +13,7 @@ def maximum(myarray)
 end
 
 print ("Сумма элементов массива: ")
-puts myarray.inject(0){ |result, elem| result = result + elem }
+puts myarray.inject(0){ |result, elem| result + elem }
 print ("Произведение элементов массива: ")
 puts myarray.inject(1){ |result, elem| result * elem }
 print("Минимальный элемент массива: ")
