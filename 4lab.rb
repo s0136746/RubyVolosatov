@@ -35,16 +35,24 @@ class Details
             return "Ошибка!"
             end
 
+            def check_article_autozap
+                if self.article_autozap =~ /^[A-Za-z0-9]+$/
+                return "Артикль верен"
+                end
+                return "Ошибка!"
+                end
+
 end
 
 
-Details1 = Details.new("ООО Групп", 20345,"Подшипник", 1500, "Адлеров Андрей Александрович", "+79649295072")
+Details1 = Details.new("ООО Групп", "4353dg","Подшипник", 1500, "Адлеров Андрей Александрович", "+79649295072")
 Details2 = Details.new("ИП Веселек", 2034543,"Прокладка ДВС", 1300, " ", "+79649295072")
 puts Details1
 puts 
 puts Details2
 puts Details1.rus_num()
 puts Details1.check_name_autozap()
+puts Details1.check_article_autozap()
 
 
 
