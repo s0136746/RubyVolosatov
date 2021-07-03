@@ -8,6 +8,7 @@ class Details
         self.name_postavshik=price_autozap
         self.telephone_postav=telephone_postav
         
+##учебник(6,11,7)
         if self.name_postavshik == " "
             self.telephone_postav=nil
         else
@@ -16,7 +17,7 @@ class Details
         end
             
     end
-    
+    ##НОМЕР телефона
     def rus_num
         if (self.telephone_postav[0] == "+" and self.telephone_postav[1] == "7") or self.telephone_postav[0] == "8" 
         return "Телефон РФ"
@@ -45,7 +46,7 @@ class Details
 end
 
 
-Details1 = Details.new("ООО Групп", "4353dg","Подшипник", 1500, "Адлеров Андрей Александрович", "+79649295072")
+Details1 = Details.new("ООО Групп", "4353","Подшипник", 1500, "Адлеров Андрей Александрович", "+79649295072")
 Details2 = Details.new("ИП Веселек", 2034543,"Прокладка ДВС", 1300, " ", "+79649295072")
 puts Details1
 puts 
